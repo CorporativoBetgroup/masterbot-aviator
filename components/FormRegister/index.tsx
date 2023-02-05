@@ -4,7 +4,7 @@ export default function Form(){
   return(
     <form action="" className='w-full'>
       <label htmlFor="email" className='text-xl text-blue-100'>Insira seu E-mail</label>
-      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-12 mt-2">
+      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-6 mt-2">
         <AiFillMail size={30}/>
         <input 
           type="text" 
@@ -15,11 +15,22 @@ export default function Form(){
       </div>
 
       <label htmlFor="password" className='text-xl text-blue-100'>Insira sua Senha</label>
-      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-20 mt-2">
+      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-6 mt-2">
         <AiFillLock size={30}/>
         <input 
           type="text" 
           id="password" 
+          placeholder="Senha..."
+          className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
+        />
+      </div>
+
+      <label htmlFor="password2" className='text-xl text-blue-100'>Repita sua Senha</label>
+      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-12 mt-2">
+        <AiFillLock size={30}/>
+        <input 
+          type="text" 
+          id="password2" 
           placeholder="Senha..."
           className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
         />
