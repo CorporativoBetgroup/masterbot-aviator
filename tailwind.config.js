@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        base: 'radial-gradient(circle, #000e4f, #001d5e, #002b6d, #00397b, #024889);'
+        base: 'linear-gradient(to right bottom, #001431, #001f60, #002691, #0026c0, #1412eb);',
+
       }
     },
   },
