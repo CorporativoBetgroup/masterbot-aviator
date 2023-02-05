@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { AiFillMail, AiFillLock } from 'react-icons/ai';
 
 export default function Form(){
@@ -25,11 +26,13 @@ export default function Form(){
         />
       </div>
 
-      <button className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
-        <h1 className="font-medium text-xl">
-          Entrar
-        </h1>
-      </button>
+      <Link href={'/home'}>
+        <button className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
+          <h1 className="font-medium text-xl">
+            Entrar
+          </h1>
+        </button>
+      </Link>
     </form>
   )
 }
