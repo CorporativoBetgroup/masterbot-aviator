@@ -4,7 +4,7 @@ export default function Form(){
   return(
     <form action="" className='w-full'>
       <label htmlFor="email" className='text-xl text-blue-100'>Insira seu E-mail</label>
-      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-12 mt-2">
+      <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-10 mt-2">
         <AiFillMail size={30}/>
         <input 
           type="text" 
