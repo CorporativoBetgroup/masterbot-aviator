@@ -6,10 +6,13 @@ import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
+
 export default function Form(){
-  const [email, setEmail] = useState('')
-  const [password1, setPassword1] = useState('')
-  const [password2, setPassword2] = useState('')
+  const [email, setEmail] = useState('');
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
+
 
   function clearInputs(){
     setEmail('');
@@ -41,8 +44,6 @@ export default function Form(){
 
       clearInputs();
       toast.success(response.message);
-
-
 
     } catch (error: any){
 
