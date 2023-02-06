@@ -8,7 +8,8 @@ type Data = {
   user?:{
     id: number
     email: string;
-  }
+  };
+  token?: string;
 }
 
 export default async function handler(
