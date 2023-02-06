@@ -13,6 +13,7 @@ export default function Form(){
   const [email, setEmail] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
 
@@ -24,6 +25,7 @@ export default function Form(){
 
   async function handleRegisterUser(e: React.SyntheticEvent){
     e.preventDefault()
+    setIsLoading(true);
 
     try { 
       const options = {
@@ -41,10 +43,12 @@ export default function Form(){
       const data = await fetch(`/api/postUser`, options);
       const response = await data.json();
       if(!data.ok){
+        setIsLoading(false)
         return toast.error(response.message)
       }
 
       clearInputs();
+      setIsLoading(false)
       toast.success(response.message);
       
       setTimeout(()=>{
@@ -53,6 +57,7 @@ export default function Form(){
 
 
     } catch (error: any){
+        setIsLoading(false)
 
       console.log(error.response.data.message)
       return toast.error(error.response.data.message)
@@ -102,11 +107,17 @@ export default function Form(){
           />
         </div>
 
-        <button type='submit' className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
-          <h1 className="font-medium text-xl">
-            Registrar-se
-          </h1>
-        </button>
+        {!isLoading ? (
+            <button className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
+              <h1 className="font-medium text-xl">
+                Cadastrar
+              </h1>
+            </button>
+          ): (
+           <button type="button" className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase flex items-center justify-center" disabled>
+              <svg className="animate-spin h-7 w-7 border-t border-r border-t-green border-r-blue rounded-full" viewBox="20 20 24 24"></svg>
+            </button>
+          )}
       </form>
       <ToastContainer autoClose={5000}/>
     </>

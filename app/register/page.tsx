@@ -1,7 +1,8 @@
-import Link from 'next/link'
+
 import { GiCommercialAirplane } from 'react-icons/gi'
 
 import Form from '../../components/FormRegister'
+import Link from 'next/link'
 
 
 export default function Home() {
