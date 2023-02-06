@@ -3,13 +3,14 @@
 import { GiCommercialAirplane } from 'react-icons/gi';
 import { MdOutlineExitToApp } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
+import { deleteCookie } from 'cookies-next';
 
 
 export default function NavBar(){
   const router = useRouter();
 
   function handleLogout(){
-    localStorage.clear();
+    deleteCookie('token');
     router.push('/')
   }
 

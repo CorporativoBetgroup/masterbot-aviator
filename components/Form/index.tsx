@@ -4,6 +4,7 @@ import { AiFillMail, AiFillLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { setCookie } from 'cookies-next';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -47,7 +48,8 @@ export default function Form(){
       clearInputs();
       toast.success(response.message)
       setIsLoading(false)
-      localStorage.setItem("token", response.token);
+      setCookie('token', response.token)
+
 
       setTimeout(()=>{
         router.push('/home')
