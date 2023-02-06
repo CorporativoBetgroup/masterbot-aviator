@@ -1,9 +1,18 @@
-import Link from 'next/link';
+"use client"
+
 import { GiCommercialAirplane } from 'react-icons/gi';
-import { MdOutlineExitToApp } from 'react-icons/md'
+import { MdOutlineExitToApp } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 
 export default function NavBar(){
+  const router = useRouter();
+
+  function handleLogout(){
+    localStorage.clear();
+    router.push('/')
+  }
+
   return(
     <nav className="w-full bg-blue-800 h-20 px-16 flex items-center justify-between">
       <div className='flex flex-row items-center gap-5'>
@@ -12,11 +21,9 @@ export default function NavBar(){
       </div>
 
       <div>
-        <Link href={'/'}>
-          <button>
-            <MdOutlineExitToApp size={40} color='#ffffff'/>
-          </button>
-        </Link>
+        <button onClick={handleLogout}>
+          <MdOutlineExitToApp size={40} color='#ffffff'/>
+        </button>
       </div>
     </nav>
   )
