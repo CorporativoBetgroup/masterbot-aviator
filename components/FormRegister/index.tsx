@@ -2,6 +2,7 @@
 
 import { AiFillMail, AiFillLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,6 +13,7 @@ export default function Form(){
   const [email, setEmail] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
+  const router = useRouter();
 
 
   function clearInputs(){
@@ -44,6 +46,11 @@ export default function Form(){
 
       clearInputs();
       toast.success(response.message);
+      
+      setTimeout(()=>{
+        router.push('/')
+      }, 8000)
+
 
     } catch (error: any){
 
@@ -101,7 +108,7 @@ export default function Form(){
           </h1>
         </button>
       </form>
-      <ToastContainer />
+      <ToastContainer autoClose={5000}/>
     </>
   )
 }
