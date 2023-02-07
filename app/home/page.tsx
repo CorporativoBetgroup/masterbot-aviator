@@ -9,8 +9,13 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true)
-  const [number1, setNumber1 ] = useState('')
-  const [number2, setNumber2 ] = useState('')
+  const [growNumber, setGrowNumber] = useState(false)
+  const [number1, setNumber1 ] = useState(0)
+  const [number2, setNumber2 ] = useState(0)
+  const [defaultNumber1 , setDefaultNumber1] = useState(0);
+  const [defaultNumber2 , setDefaultNumber2] = useState(0);
+  const [showedNumber1 , setShowedNumber1] = useState('');
+  const [showedNumber2 , setShowedNumber2] = useState('');
 
   useEffect(()=>{
     setIsLoading(true)
@@ -29,38 +34,29 @@ export default function Home() {
   function getValues(){
     const randomNumber1 = Math.floor(Math.random() * 10)
     const randomNumber2 = Math.floor(Math.random() * 10)
-
-    const text1 = document.getElementById('number1');
-
-
+    setDefaultNumber1(0);
+    setDefaultNumber2(0);
 
 
     if(randomNumber1 < 8){
       const value1 = getRandomInt(1, 2);
-      setNumber1(value1)
-      console.log(value1);
+      setNumber1(parseFloat(value1))
     }
     else if(randomNumber1 >= 8){
       const value1 = getRandomInt(5, 5);
-      setNumber1(value1)
-      console.log(value1);
+      setNumber1(parseFloat(value1))
     }
 
     if(randomNumber2 < 8){
       const value2 = getRandomInt(1, 2);
-      setNumber2(value2)
-      console.log(value2);
+      setNumber2(parseFloat(value2))
     }
     else if(randomNumber2 >= 8){
       const value2 = getRandomInt(5, 5);
-      setNumber2(value2)
-      console.log(value2);
+      setNumber2(parseFloat(value2))
     }
-
-
-
-
   }
+
 
   if(!isLoading){
     return (
@@ -69,7 +65,9 @@ export default function Home() {
 
         <div className='flex items-center justify-center mt-20 flex-col'>
           <button 
-            onClick={getValues}
+            onClick={()=>{
+              getValues();
+            }}
             className='bg-blue-800 px-12 py-6 text-lg rounded-3xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
             Gerar Sinais
           </button>
@@ -78,14 +76,14 @@ export default function Home() {
             <div className='w-1/4 bg-black h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
               <h1 className='text-xl'>Primeiro Valor</h1>
               <div className='w-full h-full flex justify-center items-center'>
-                <input type="text" className='bg-transparent 2-60 outline-none hover:cursor-default text-center text-7xl' readOnly onChange={getValues} value={number1}/>
+                <input type="text" className='bg-transparent 2-60 outline-none hover:cursor-default text-center text-7xl' readOnly onChange={getValues} value={defaultNumber1}/>
               </div>
             </div>
 
             <div className='w-1/4 bg-blue-800 h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
               <h1 className='text-xl'>Segundo Valor</h1>
               <div className='w-full h-full flex justify-center items-center'>
-                <input type="text" className='bg-transparent w-60 text-center outline-none text-7xl hover:cursor-default' readOnly onChange={getValues} value={number2}/>
+                <input type="text" className='bg-transparent w-60 text-center outline-none text-7xl hover:cursor-default' readOnly onChange={getValues} value={defaultNumber2}/>
               </div>
             </div>
           </div>
