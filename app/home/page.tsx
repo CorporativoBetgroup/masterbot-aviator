@@ -10,10 +10,9 @@ import AnimatedNumber from 'react-animated-number';
 export default function Home() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true)
+  const [isSearching, setIsSearching] = useState(false)
   const [number1, setNumber1 ] = useState(0)
   const [number2, setNumber2 ] = useState(0)
-  const [defaultNumber1 , setDefaultNumber1] = useState(0);
-  const [defaultNumber2 , setDefaultNumber2] = useState(0);
 
   useEffect(()=>{
     setIsLoading(true)
@@ -35,8 +34,11 @@ export default function Home() {
     setNumber1(0);
     setNumber2(0);
 
+    setIsSearching(true);
 
     setTimeout(()=>{
+      setIsSearching(false);
+
       if(randomNumber1 < 8){
         const value1 = getRandomInt(1, 2);
         setNumber1(parseFloat(value1))
