@@ -1,21 +1,19 @@
 "use client"
 
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getCookie } from 'cookies-next'
 
 import NavBar from "../../components/NavBar";
-import { useEffect, useState } from 'react';
+import AnimatedNumber from 'react-animated-number';
 
 export default function Home() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true)
-  const [growNumber, setGrowNumber] = useState(false)
   const [number1, setNumber1 ] = useState(0)
   const [number2, setNumber2 ] = useState(0)
   const [defaultNumber1 , setDefaultNumber1] = useState(0);
   const [defaultNumber2 , setDefaultNumber2] = useState(0);
-  const [showedNumber1 , setShowedNumber1] = useState('');
-  const [showedNumber2 , setShowedNumber2] = useState('');
 
   useEffect(()=>{
     setIsLoading(true)
@@ -34,27 +32,29 @@ export default function Home() {
   function getValues(){
     const randomNumber1 = Math.floor(Math.random() * 10)
     const randomNumber2 = Math.floor(Math.random() * 10)
-    setDefaultNumber1(0);
-    setDefaultNumber2(0);
+    setNumber1(0);
+    setNumber2(0);
 
 
-    if(randomNumber1 < 8){
-      const value1 = getRandomInt(1, 2);
-      setNumber1(parseFloat(value1))
-    }
-    else if(randomNumber1 >= 8){
-      const value1 = getRandomInt(5, 5);
-      setNumber1(parseFloat(value1))
-    }
+    setTimeout(()=>{
+      if(randomNumber1 < 8){
+        const value1 = getRandomInt(1, 2);
+        setNumber1(parseFloat(value1))
+      }
+      else if(randomNumber1 >= 8){
+        const value1 = getRandomInt(5, 5);
+        setNumber1(parseFloat(value1))
+      }
 
-    if(randomNumber2 < 8){
-      const value2 = getRandomInt(1, 2);
-      setNumber2(parseFloat(value2))
-    }
-    else if(randomNumber2 >= 8){
-      const value2 = getRandomInt(5, 5);
-      setNumber2(parseFloat(value2))
-    }
+      if(randomNumber2 < 8){
+        const value2 = getRandomInt(1, 2);
+        setNumber2(parseFloat(value2))
+      }
+      else if(randomNumber2 >= 8){
+        const value2 = getRandomInt(5, 5);
+        setNumber2(parseFloat(value2))
+      }
+    }, 1500)
   }
 
 
@@ -72,18 +72,30 @@ export default function Home() {
             Gerar Sinais
           </button>
 
-          <div className='flex lg:flex-row sm:flex-col mt-12 text-white mb-60 justify-around'>
+          <div className='flex flex-row mt-12 text-white mb-60 justify-around w-full'>
             <div className='w-1/4 bg-black h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
               <h1 className='text-xl'>Primeiro Valor</h1>
               <div className='w-full h-full flex justify-center items-center'>
-                <input type="text" className='bg-transparent 2-60 outline-none hover:cursor-default text-center text-7xl' readOnly onChange={getValues} value={defaultNumber1}/>
+                <AnimatedNumber 
+                  value={number1}
+                  className='text-7xl'
+                  formatValue={(n: number) => n.toFixed(2)}
+                  duration={800}
+                />
               </div>
             </div>
 
             <div className='w-1/4 bg-blue-800 h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
               <h1 className='text-xl'>Segundo Valor</h1>
               <div className='w-full h-full flex justify-center items-center'>
-                <input type="text" className='bg-transparent w-60 text-center outline-none text-7xl hover:cursor-default' readOnly onChange={getValues} value={defaultNumber2}/>
+                
+                <AnimatedNumber 
+                  value={number2}
+                  className='text-7xl'
+                  formatValue={(n: number) => n.toFixed(2)}
+                  duration={800}
+                />
+
               </div>
             </div>
           </div>
