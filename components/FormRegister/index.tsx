@@ -57,10 +57,9 @@ export default function Form(){
 
 
     } catch (error: any){
-        setIsLoading(false)
-
-      console.log(error.response.data.message)
-      return toast.error(error.response.data.message)
+      setIsLoading(false)
+      console.log(error)
+      return toast.error(error)
     }
   }
 

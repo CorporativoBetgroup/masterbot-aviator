@@ -48,10 +48,7 @@ export default async function handler(
       expiresIn: '8h' 
     })
 
-
-    const { password: _, ...userLogin } = emailAlreadyExists;
-
-    return res.json({message: 'Usuário logado com sucesso', user: userLogin, token })
+    return res.json({message: 'Usuário logado com sucesso', token })
 
   }
 }
