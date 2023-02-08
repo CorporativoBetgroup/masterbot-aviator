@@ -60,7 +60,7 @@ export default function Home() {
           </div>
 
           <div className="w-full h-full md:w-1/2 bg-blue-800 px-8 py-10 text-white flex justify-between flex-col items-center">
-            <h1 className=' text-xl md:text-2xl'>Conecte-se para ter acesso aos sinais</h1>
+            <h1 className=' text-lg md:text-2xl'>Conecte-se para ter acesso aos sinais</h1>
             <Form />
           </div>
         </div>

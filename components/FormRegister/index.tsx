@@ -53,7 +53,7 @@ export default function Form(){
       
       setTimeout(()=>{
         router.push('/')
-      }, 8000)
+      }, 2500)
 
 
     } catch (error: any){
@@ -66,41 +66,41 @@ export default function Form(){
   
   return(
     <>
-      <form onSubmit={(e) => handleRegisterUser(e)} className='w-full'>
-        <label htmlFor="email" className='text-xl text-blue-100'>Insira seu E-mail</label>
+      <form onSubmit={(e) => handleRegisterUser(e)} className='w-full mt-2 md:mt-0'>
+        <label htmlFor="email" className='text-lg md:text-xl text-blue-100'>Insira seu E-mail</label>
         <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-6 mt-2">
           <AiFillMail size={30}/>
           <input 
             type="text" 
             id="email" 
             placeholder="Email..."
-            className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
+            className='bg-transparent text-lg md:text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
         </div>
 
-        <label htmlFor="password" className='text-xl text-blue-100'>Insira sua Senha</label>
+        <label htmlFor="password" className='text-lg md:text-xl text-blue-100'>Insira sua Senha</label>
         <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-6 mt-2">
           <AiFillLock size={30}/>
           <input 
             type="password" 
             id="password" 
             placeholder="Senha..."
-            className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
+            className='bg-transparent text-lg md:text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
             onChange={(e) => setPassword1(e.target.value)}
             value={password1}
           />
         </div>
 
-        <label htmlFor="password2" className='text-xl text-blue-100'>Repita sua Senha</label>
-        <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-12 mt-2">
+        <label htmlFor="password2" className='text-lg md:text-xl text-blue-100'>Repita sua Senha</label>
+        <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-10 md:mb-12 mt-2">
           <AiFillLock size={30}/>
           <input 
             type="password" 
             id="password2" 
             placeholder="Senha..."
-            className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
+            className='bg-transparent text-lg md:text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
             onChange={(e) => setPassword2(e.target.value)}
             value={password2}
           />
@@ -108,7 +108,7 @@ export default function Form(){
 
         {!isLoading ? (
             <button className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
-              <h1 className="font-medium text-xl">
+              <h1 className="font-medium text-lg md:text-xl">
                 Cadastrar
               </h1>
             </button>
@@ -118,7 +118,7 @@ export default function Form(){
             </button>
           )}
       </form>
-      <ToastContainer autoClose={5000}/>
+      <ToastContainer autoClose={2000}/>
     </>
   )
 }

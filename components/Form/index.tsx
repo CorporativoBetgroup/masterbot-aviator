@@ -53,7 +53,7 @@ export default function Form(){
 
       setTimeout(()=>{
         router.push('/home')
-      }, 2500)
+      }, 2100)
 
 
     } catch (error: any){
