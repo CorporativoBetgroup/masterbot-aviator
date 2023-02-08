@@ -62,10 +62,17 @@ export default function Home() {
 
   if(!isLoading){
     return (
-      <main className="bg-base w-full h-full flex flex-col gap-20">
+      <main className="bg-base md:w-full md:h-full flex flex-col gap-20">
         <NavBar />
+        <div className='hidden md:flex bg-background absolute h-[91vh] w-[99vw] top-20 opacity-5 bg-no-repeat bg-cover'>
+          .
+        </div>
 
-        <div className='md:px-20 md:py-28 py-5'>
+        <div className='flex md:hidden bg-background absolute h-[91vh] w-[99vw] top-20 opacity-5 bg-no-repeat bg-cover'>
+          .
+        </div>
+
+        <div className='md:px-20 md:py-28 py-20'>
           <div className='flex items-center justify-center flex-col'>
             <button 
               onClick={()=>{

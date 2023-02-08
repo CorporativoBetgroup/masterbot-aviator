@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         base: 'linear-gradient(to right bottom, #001431, #001f60, #002691, #0026c0, #1412eb);',
-
+        'background': "url('/wallpaper.jpg')"
       }
     },
   },
