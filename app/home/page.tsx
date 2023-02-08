@@ -65,7 +65,7 @@ export default function Home() {
       <main className="bg-base w-full h-full flex flex-col gap-20">
         <NavBar />
 
-        <div className='px-20 py-20'>
+        <div className='md:px-20 md:py-20 py-5'>
           <div className='flex items-center justify-center flex-col'>
             <button 
               onClick={()=>{
@@ -75,26 +75,26 @@ export default function Home() {
               Gerar Sinais
             </button>
 
-            <div className='flex flex-row mt-12 text-white mb-60 justify-around w-full'>
-              <div className='w-1/4 bg-black h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
+            <div className='flex flex-col md:flex-row mt-12 text-white mb-20 md:mb-60 justify-center items-center md:justify-around w-full gap-5 md:gap-0'>
+              <div className='w-3/4 md:w-1/4 bg-black md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
                 <h1 className='text-xl'>Primeiro Valor</h1>
                 <div className='w-full h-full flex justify-center items-center'>
                   <AnimatedNumber 
                     value={number1}
-                    className='text-7xl'
+                    className='text-5xl md:text-7xl'
                     formatValue={(n: number) => n.toFixed(2)}
                     duration={800}
                   />
                 </div>
               </div>
 
-              <div className='w-1/4 bg-blue-800 h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
+              <div className='w-3/4  md:w-1/4 bg-blue-800 md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
                 <h1 className='text-xl'>Segundo Valor</h1>
                 <div className='w-full h-full flex justify-center items-center'>
                   
                   <AnimatedNumber 
                     value={number2}
-                    className='text-7xl'
+                    className='text-5xl md:text-7xl'
                     formatValue={(n: number) => n.toFixed(2)}
                     duration={800}
                   />
