@@ -2,7 +2,7 @@ import NavBar from "@/components/NavBar";
 
 export default function loading(){
     return(
-        <main className="bg-base w-[100vw] h-[100vh]">
+        <main className="bg-base w-full h-full">
             <NavBar />
             <div className='flex items-center justify-center mt-20 flex-col'>
                 <button 
