@@ -62,15 +62,10 @@ export default function Home() {
 
   if(!isLoading){
     return (
-      <main className="bg-base md:w-full md:h-full flex flex-col gap-20">
-        <NavBar />
-        <div className='hidden md:flex bg-background absolute h-[91vh] w-[99vw] top-20 opacity-5 bg-no-repeat bg-cover'>
-          .
-        </div>
+      <div className='bg-base'>
 
-        <div className='flex md:hidden bg-background absolute h-[91vh] w-[99vw] top-20 opacity-5 bg-no-repeat bg-cover'>
-          .
-        </div>
+        <main className="flex flex-col gap-20 bg-background bg-cover">
+        <NavBar />
 
         <div className='md:px-20 md:py-28 py-20'>
           <div className='flex items-center justify-center flex-col'>
@@ -119,6 +114,8 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      </div>
     )
   }
   else if (isLoading){
