@@ -56,7 +56,6 @@ export default function Home() {
           </div>
           <div className="w-1/2 bg-blue-800 px-8 py-10 text-white flex justify-between flex-col items-center">
             <h1 className='text-2xl'>Conecte-se para ter acesso aos sinais</h1>
-
             <Form />
           </div>
         </div>
@@ -66,7 +65,7 @@ export default function Home() {
   else{
     return(
         <main className="flex items-center justify-center bg-base w-[100vw] h-[100vh]">
-          <svg className="animate-spin h-12 w-12 border-t border-r border-t-green border-r-blue rounded-full" viewBox="20 20 24 24"></svg>
+           <svg className="animate-spin h-12 w-12 border-t border-r border-t-green border-r-blue rounded-full" viewBox="20 20 24 24"></svg>
         </main>
     )
   }

@@ -53,7 +53,7 @@ export default function Form(){
 
       setTimeout(()=>{
         router.push('/home')
-      }, 7000)
+      }, 2500)
 
 
     } catch (error: any){
@@ -108,7 +108,7 @@ export default function Form(){
           )}
         </div>
       </form>
-      <ToastContainer autoClose={5000}/>
+      <ToastContainer autoClose={2000}/>
     </>
   )
 }
