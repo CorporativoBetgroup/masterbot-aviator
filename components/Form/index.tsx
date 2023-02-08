@@ -66,9 +66,9 @@ export default function Form(){
   return(
     <>
       <form onSubmit={(e) => handleLogin(e)} className='w-full h-full flex flex-col justify-between'>
-        <div className='mt-20'>
+        <div className='mt-5 md:mt-20'>
           <label htmlFor="email" className='text-xl text-blue-100'>Insira seu E-mail</label>
-          <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-10 mt-2">
+          <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-5 md:mb-10 md:mt-2 mt-0">
             <AiFillMail size={30}/>
             <input 
               type="text" 
@@ -81,7 +81,7 @@ export default function Form(){
           </div>
 
           <label htmlFor="password" className='text-xl text-blue-100'>Insira sua Senha</label>
-          <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-20 mt-2">
+          <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl md:mb-20 mb-5 mt-2">
             <AiFillLock size={30}/>
             <input 
               type="password" 
@@ -97,7 +97,7 @@ export default function Form(){
         <div>
           {!isLoading ? (
             <button className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
-              <h1 className="font-medium text-xl">
+              <h1 className="font-medium md:text-xl text-lg">
                 Entrar
               </h1>
             </button>

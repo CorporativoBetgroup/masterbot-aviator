@@ -62,52 +62,54 @@ export default function Home() {
 
   if(!isLoading){
     return (
-      <main className="bg-base w-[100vw] h-[100vh] ">
+      <main className="bg-base w-full h-full flex flex-col gap-20">
         <NavBar />
 
-        <div className='flex items-center justify-center mt-20 flex-col'>
-          <button 
-            onClick={()=>{
-              getValues();
-            }}
-            className='bg-blue-800 px-12 py-6 text-lg rounded-3xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
-            Gerar Sinais
-          </button>
+        <div className='px-20 py-20'>
+          <div className='flex items-center justify-center flex-col'>
+            <button 
+              onClick={()=>{
+                getValues();
+              }}
+              className='bg-blue-800 px-12 py-6 text-lg rounded-3xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
+              Gerar Sinais
+            </button>
 
-          <div className='flex flex-row mt-12 text-white mb-60 justify-around w-full'>
-            <div className='w-1/4 bg-black h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
-              <h1 className='text-xl'>Primeiro Valor</h1>
-              <div className='w-full h-full flex justify-center items-center'>
-                <AnimatedNumber 
-                  value={number1}
-                  className='text-7xl'
-                  formatValue={(n: number) => n.toFixed(2)}
-                  duration={800}
-                />
+            <div className='flex flex-row mt-12 text-white mb-60 justify-around w-full'>
+              <div className='w-1/4 bg-black h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
+                <h1 className='text-xl'>Primeiro Valor</h1>
+                <div className='w-full h-full flex justify-center items-center'>
+                  <AnimatedNumber 
+                    value={number1}
+                    className='text-7xl'
+                    formatValue={(n: number) => n.toFixed(2)}
+                    duration={800}
+                  />
+                </div>
+              </div>
+
+              <div className='w-1/4 bg-blue-800 h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
+                <h1 className='text-xl'>Segundo Valor</h1>
+                <div className='w-full h-full flex justify-center items-center'>
+                  
+                  <AnimatedNumber 
+                    value={number2}
+                    className='text-7xl'
+                    formatValue={(n: number) => n.toFixed(2)}
+                    duration={800}
+                  />
+
+                </div>
               </div>
             </div>
 
-            <div className='w-1/4 bg-blue-800 h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
-              <h1 className='text-xl'>Segundo Valor</h1>
-              <div className='w-full h-full flex justify-center items-center'>
-                
-                <AnimatedNumber 
-                  value={number2}
-                  className='text-7xl'
-                  formatValue={(n: number) => n.toFixed(2)}
-                  duration={800}
-                />
-
-              </div>
-            </div>
+            
+            <button className='bg-red-800 py-8 px-16  drop-shadow-xl rounded-3xl border-2 border-red-500 hover:bg-red-700 active:bg-red-900 ease-in-out transition-colors'>
+              <h1 className='text-xl text-white'>
+                AVIATOR
+              </h1>
+            </button>
           </div>
-
-          
-          <button className='bg-red-800 py-8 px-16  drop-shadow-xl rounded-3xl border-2 border-red-500 hover:bg-red-700 active:bg-red-900 ease-in-out transition-colors'>
-            <h1 className='text-xl text-white'>
-              AVIATOR
-            </h1>
-          </button>
         </div>
       </main>
     )
