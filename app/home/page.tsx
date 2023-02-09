@@ -8,6 +8,7 @@ import NavBar from "../../components/NavBar";
 import AnimatedNumber from 'react-animated-number';
 import Logo from '../../public/MASTERBOT-LOGO.png';
 import Image from 'next/image';
+import Helice from '../../public/helice.svg';
 
 export default function Home() {
   const router = useRouter();
@@ -58,7 +59,7 @@ export default function Home() {
         const value2 = getRandomInt(5, 5);
         setNumber2(parseFloat(value2))
       }
-    }, 1500)
+    }, 2700)
   }
 
 
@@ -75,13 +76,19 @@ export default function Home() {
 
         <div className='md:px-20 md:py-20 py-20'>
           <div className='flex items-center justify-center flex-col'>
-            <button 
-              onClick={()=>{
-                getValues();
-              }}
-              className='bg-blue-800 px-24 py-6 text-lg rounded-xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
-              DECOLAR
-            </button>
+            {isSearching ? (
+              <div>
+                <Image src={Helice} width={200} height={200} className="w-24 h-24 animate-spin duration-1000" alt='helice'/>
+              </div>
+            ):(
+              <button 
+                onClick={()=>{
+                  getValues();
+                }}
+                className='bg-blue-800 px-24 py-6 text-lg rounded-xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
+                DECOLAR
+              </button>
+            )}
 
             <div className='flex flex-col md:flex-row mt-12 text-white mb-20 md:mb-32 justify-center items-center md:justify-around w-full gap-5 md:gap-0'>
               <div className='w-3/4  md:w-1/3 bg-cover bg-background-botao bg-no-repeat md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
