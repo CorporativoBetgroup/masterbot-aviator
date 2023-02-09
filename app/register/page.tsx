@@ -6,7 +6,7 @@ import Logo from '../../public/MASTERBOT-LOGO.png';
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center bg-base w-[100vw] h-[100vh]">
+    <main className="flex items-center justify-center bg-base md:w-[100vw] md:h-[100vh] w-full h-full">
       <div className="bg-white max-w-7xl md:max-h-[35rem] w-full h-full md:rounded-tl-[3.75rem] md:rounded-br-[3.75rem] flex flex-col md:flex-row md:justify-between overflow-hidden">
         <div className=" w-full md:w-1/2 bg-black flex justify-center flex-col items-center gap-5 md:gap-16 py-5 md:py-0">
           <div className='flex justify-center flex-col items-center'>
