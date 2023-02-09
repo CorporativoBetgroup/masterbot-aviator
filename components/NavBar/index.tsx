@@ -18,9 +18,8 @@ export default function NavBar(){
   }
 
   return(
-    <nav className="w-full bg-blue-800 h-20 md:px-16 flex items-center justify-between">
+    <nav className="w-full bg-black h-20 md:px-16 flex items-center justify-between">
       <div className='flex flex-row items-center gap-5'>
-        <Image src={Logo} alt="logo" className='w-20 h-20'/>
         <h1 className='text-white text-xl font-semibold '>MasterBot - Aviator</h1>
       </div>
 
