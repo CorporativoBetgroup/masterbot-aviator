@@ -67,27 +67,27 @@ export default function Form(){
     <>
       <form onSubmit={(e) => handleLogin(e)} className='w-full h-full flex flex-col justify-between'>
         <div className='mt-5 md:mt-20'>
-          <label htmlFor="email" className='text-xl text-blue-100'>Insira seu E-mail</label>
-          <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl mb-5 md:mb-10 md:mt-2 mt-0">
+          <label htmlFor="email" className='text-xl text-black'>Insira seu E-mail</label>
+          <div className="flex flex-row border-2 border-red-500 gap-5 px-4 py-3 rounded-3xl mb-5 md:mb-10 md:mt-2 mt-0">
             <AiFillMail size={30}/>
             <input 
               type="text" 
               id="email" 
               placeholder="Email..."
-              className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
+              className='bg-transparent text-xl w-full pl-2 text-black border-0 outline-none border-l-2'
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
           </div>
 
-          <label htmlFor="password" className='text-xl text-blue-100'>Insira sua Senha</label>
-          <div className="flex flex-row border-2 border-white gap-5 px-4 py-3 rounded-3xl md:mb-20 mb-5 mt-2">
+          <label htmlFor="password" className='text-xl text-black'>Insira sua Senha</label>
+          <div className="flex flex-row border-2 border-red-500 gap-5 px-4 py-3 rounded-3xl md:mb-20 mb-5 mt-2">
             <AiFillLock size={30}/>
             <input 
               type="password" 
               id="password" 
               placeholder="Senha..."
-              className='bg-transparent text-xl w-full pl-2 text-blue-100 border-0 outline-none border-l-2'
+              className='bg-white text-xl w-full pl-2 text-black border-0 outline-none border-l-2'
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
@@ -96,14 +96,14 @@ export default function Form(){
 
         <div>
           {!isLoading ? (
-            <button className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase">
+            <button className="text-white bg-[#ed114e] rounded-3xl w-full py-3 uppercase">
               <h1 className="font-medium md:text-xl text-lg">
                 Entrar
               </h1>
             </button>
           ): (
-           <button type="button" className="text-white bg-blue-500 rounded-3xl w-full py-3 uppercase flex items-center justify-center" disabled>
-              <svg className="animate-spin h-7 w-7 border-t border-r border-t-green border-r-blue rounded-full" viewBox="20 20 24 24"></svg>
+           <button type="button" className="text-white bg-[#ed114e] rounded-3xl w-full py-3 uppercase flex items-center justify-center" disabled>
+              <svg className="animate-spin h-7 w-7 border-t border-r border-t-green border-r-red rounded-full" viewBox="20 20 24 24"></svg>
             </button>
           )}
         </div>

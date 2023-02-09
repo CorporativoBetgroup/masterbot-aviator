@@ -62,9 +62,9 @@ export default function Home() {
 
   if(!isLoading){
     return (
-      <div className='bg-base'>
+      <div className='bg-black'>
 
-        <main className="flex flex-col gap-20 bg-background bg-cover">
+        <main className="flex flex-col gap-20 bg-home bg-cover">
         <NavBar />
 
         <div className='md:px-20 md:py-28 py-20'>
@@ -78,7 +78,7 @@ export default function Home() {
             </button>
 
             <div className='flex flex-col md:flex-row mt-12 text-white mb-20 md:mb-32 justify-center items-center md:justify-around w-full gap-5 md:gap-0'>
-              <div className='w-3/4 md:w-1/4 bg-black md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
+              <div className='w-3/4  md:w-1/3 bg-cover bg-background-botao bg-no-repeat md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
                 <h1 className='text-xl'>Primeiro Valor</h1>
                 <div className='w-full h-full flex justify-center items-center'>
                   <AnimatedNumber 
@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className='w-3/4  md:w-1/4 bg-blue-800 md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
+              <div className='w-3/4  md:w-1/3 bg-cover bg-background-botao bg-no-repeat md:h-40 rounded-3xl px-3 py-5 flex flex-col items-center drop-shadow-lg'>
                 <h1 className='text-xl'>Segundo Valor</h1>
                 <div className='w-full h-full flex justify-center items-center'>
                   
@@ -106,7 +106,7 @@ export default function Home() {
             </div>
 
             
-            <button className='bg-red-800 py-8 px-16  drop-shadow-xl rounded-3xl border-2 border-red-500 hover:bg-red-700 active:bg-red-900 ease-in-out transition-colors'>
+            <button className='bg-[#ed114e] py-8 px-16  drop-shadow-xl rounded-3xl border-2 border-red-500 hover:bg-[#f24073] active:bg-[#bf0d40] ease-in-out transition-colors'>
               <h1 className='text-xl text-white'>
                 AVIATOR
               </h1>
