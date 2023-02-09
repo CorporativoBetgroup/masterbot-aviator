@@ -119,11 +119,11 @@ export default function Home() {
             </div>
 
             
-            <button className='bg-[#ed114e] py-8 px-20  drop-shadow-xl rounded-xl border-2 border-red-500 hover:bg-[#f24073] active:bg-[#bf0d40] ease-in-out transition-colors'>
+            <a href='https://go.aff.estrelabetpartners.com/ogkf6ubw' target="_blank" rel='noreferrer' className='bg-[#ed114e] py-8 px-20  drop-shadow-xl rounded-xl border-2 border-red-500 hover:bg-[#f24073] active:bg-[#bf0d40] ease-in-out transition-colors'>
               <h1 className='text-xl text-white'>
                 AVIATOR
               </h1>
-            </button>
+            </a>
           </div>
         </div>
       </main>
