@@ -6,6 +6,8 @@ import { getCookie } from 'cookies-next'
 
 import NavBar from "../../components/NavBar";
 import AnimatedNumber from 'react-animated-number';
+import Logo from '../../public/MASTERBOT-LOGO.png';
+import Image from 'next/image';
 
 export default function Home() {
   const router = useRouter();
@@ -64,17 +66,21 @@ export default function Home() {
     return (
       <div className='bg-black'>
 
-        <main className="flex flex-col gap-20 bg-home bg-cover">
+        <main className="flex flex-col bg-home bg-contain">
         <NavBar />
 
-        <div className='md:px-20 md:py-28 py-20'>
+        <div className='w-full flex justify-center items-center'>
+          <Image src={Logo} alt="logo" className='md:max-w-lg'/>
+        </div>
+
+        <div className='md:px-20 md:py-20 py-20'>
           <div className='flex items-center justify-center flex-col'>
             <button 
               onClick={()=>{
                 getValues();
               }}
-              className='bg-blue-800 px-12 py-6 text-lg rounded-3xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
-              Gerar Sinais
+              className='bg-blue-800 px-24 py-6 text-lg rounded-xl text-white drop-shadow-md border-2 border-blue-500 hover:bg-blue-600 ease-in-out transition-colors active:bg-blue-900'>
+              DECOLAR
             </button>
 
             <div className='flex flex-col md:flex-row mt-12 text-white mb-20 md:mb-32 justify-center items-center md:justify-around w-full gap-5 md:gap-0'>
@@ -106,7 +112,7 @@ export default function Home() {
             </div>
 
             
-            <button className='bg-[#ed114e] py-8 px-16  drop-shadow-xl rounded-3xl border-2 border-red-500 hover:bg-[#f24073] active:bg-[#bf0d40] ease-in-out transition-colors'>
+            <button className='bg-[#ed114e] py-8 px-20  drop-shadow-xl rounded-xl border-2 border-red-500 hover:bg-[#f24073] active:bg-[#bf0d40] ease-in-out transition-colors'>
               <h1 className='text-xl text-white'>
                 AVIATOR
               </h1>
