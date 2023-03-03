@@ -13,14 +13,6 @@ export default async function handler(
     
     const { customer } = req.body;
     const email  = customer.email;
-    const emailAlreadyExists = await prisma.autorizedEmail.findFirst({
-      where:{
-        email
-      }
-    })
-    if(emailAlreadyExists){
-      return res.status(400).json({ message: 'Email já cadastrado na nossa plataforma' })
-    }
 
     const createdAuthEmail = await prisma.autorizedEmail.create({
       data:{
